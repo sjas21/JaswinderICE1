@@ -7,7 +7,7 @@ package cardtrickice1;
 
 /** step1 : generate 7 random cards and store in array - how
  * step 2: take any card input from user suit,number
- * step 3: user card is in  the array 'card is found'
+ * step 3: user card is in  the array 'card is found
  *
  * @author sivagamasrinivasan,May 23rd
  */
