@@ -15,7 +15,7 @@ public class Card
     private int value;
     private String suits; //encapsulation
     //constant
-    public static final String [] SUITS = { "diamonds","clubs","spades","hearts"};
+    public static final String [] SUITS = { "Hearts","Diamonds","Spades","Clubs"};
 
     /**
      * @return the value
@@ -46,6 +46,9 @@ public class Card
     }
    //number
     
-    //method for suits
+    public static String calcSuits(int num)//method for suits
+    {
+        return SUITS[num];
+    }
     
 }

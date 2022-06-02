@@ -5,29 +5,52 @@
  */
 package cardtrickice1;
 
-/** step1 : generate 7 random cards and store in array - how
- * step 2: take any card input from user suit,number
- * step 3: user card is in  the array 'card is found
- *
- * @author sivagamasrinivasan,May 23rd
+/*
+ * @author Jaswinder Singh Sehgal June 1st 2022
  */
-public class CardTrickICE1 {
+import java.util.Scanner;
+public class CardTrickICE1 extends Card{
 
     /**
-     * @param args the command line arguments
+     * @param String array args
      */
     public static void main(String[] args) 
     {
+        int temp=0;
+        String s="";
+        Scanner sc = new Scanner(System.in);
         Card[] magicHand = new Card[7]; //Array of object
         for( int i=0;i<magicHand.length;i++)
         {
             Card c1 = new Card();
-            c1.setValue(2);//use a method to generate random *13
-            c1.setSuits("hearts");//random method suit 
+            c1.setValue((int)(Math.random()*12+1));//use a method to generate random *13
+            
+            temp=(int)(Math.random()*3+1);
+            s=calcSuits(temp);
+            c1.setSuits(s);//random method suit
+            magicHand[i]=c1;
         }
-        //step 2:take input 
+        for(int i=0;i<magicHand.length;i++)
+            System.out.println(magicHand[i].getValue()+" of "+magicHand[i].getSuits());
         
-        //step 3: match with array 
-    }
-    
+        System.out.println("Please choose the Suit \n1:Hearts\n2:Diamonds\n3:Spades\n4.Clubs");
+        int in1 =sc.nextInt();
+        System.out.println("Please choose the value 1 to 12");
+        int in2 =sc.nextInt();
+        String type=SUITS[in1];
+        
+        boolean flag = false;
+        for( int i=0;i<magicHand.length;i++)
+        {
+            if(magicHand[i].getValue()==in2 && magicHand[i].getSuits().equalsIgnoreCase(type))
+            {
+                flag=true;
+            }
+        }
+        if(flag)
+            System.out.println("The card is prsent in the array");
+        else
+            System.out.println("The card is not present in the array");
+       
+  
 }
