@@ -19,6 +19,11 @@ public class CardTrickICE1 extends Card{
         int temp=0;
         String s="";
         Scanner sc = new Scanner(System.in);
+        
+        Card luckyCard = new Card();//hard coding an object of class Card and setting the value and suit of the card
+        luckyCard.setValue(10);
+        luckyCard.setSuits("Hearts");
+        
         Card[] magicHand = new Card[7]; //Array of object
         for( int i=0;i<magicHand.length;i++)
         {
